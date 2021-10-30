@@ -22,6 +22,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('books', function () {
     return JsonResource::collection(Book::get())->additional([
-        'server' => $_SERVER['SERVER_ADDR']
+        'server' => env('SERVER_NAME', 'server has no name yet!')
     ]);
 });
